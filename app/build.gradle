@@ -16,7 +16,7 @@ android {
         versionCode 87
         versionName "v3.10.7"
     }
-
+//asd
     signingConfigs {
         pictureSelectorKey {
             storeFile file("signature/picture.jks")
