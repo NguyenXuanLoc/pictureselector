@@ -25,10 +25,10 @@ def developerAuthorName = mavenUsername
 println("${mavenUsername} ${mavenPassword} - ${projectGroupId}:${projectArtifactId}:${projectVersionName}")
 println("${projectLicense} - ${projectLicenseUrl}")
 
-if (!mavenUsername || !mavenPassword || !projectGroupId || !projectArtifactId || !projectVersionName) {
+/*if (!mavenUsername || !mavenPassword || !projectGroupId || !projectArtifactId || !projectVersionName) {
     println('Error：缺少参数')
     return
-}
+}*/
 if (!projectDescription || !projectGitUrl || !projectLicense || !projectLicenseUrl || !developerAuthorId || !developerAuthorName || !developerAuthorEmail) {
     println('Warning：缺少可选信息')
 }
