@@ -75,4 +75,6 @@
     <string name="ps_select_audio_max_second">Audio für mehr als %1$d Sekunden auswählen</string>
     <string name="ps_select_audio_min_second">Audio für weniger als %1$d Sekunden auswählen</string>
     <string name="ps_select_no_support">Nicht unterstützter Auswahltyp</string>
+    <string name="image_size_too_big">Image size is too big, please try again</string>
+
 </resources>

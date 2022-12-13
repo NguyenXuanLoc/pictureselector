@@ -3,6 +3,7 @@ package com.luck.picture.lib.adapter.holder;
 import android.content.Context;
 import android.graphics.ColorFilter;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.luck.picture.lib.R;
 import com.luck.picture.lib.adapter.PictureImageGridAdapter;
+import com.luck.picture.lib.config.Constant;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.config.PictureSelectionConfig;
 import com.luck.picture.lib.config.SelectModeConfig;
@@ -23,6 +25,7 @@ import com.luck.picture.lib.manager.SelectedManager;
 import com.luck.picture.lib.style.SelectMainStyle;
 import com.luck.picture.lib.utils.AnimUtils;
 import com.luck.picture.lib.utils.StyleUtils;
+import com.luck.picture.lib.utils.ToastUtils;
 import com.luck.picture.lib.utils.ValueOf;
 
 import java.util.List;
@@ -151,11 +154,15 @@ public class BaseRecyclerMediaHolder extends RecyclerView.ViewHolder {
                 btnCheck.performClick();
             }
         });
-
+        //TODO check size off image
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (media.isMaxSelectEnabledMask() || listener == null) {
+                    return;
+                }
+                if (media.getSize() > Constant.FOUR_MB) {
+                    ToastUtils.showToast(btnCheck.getContext(), btnCheck.getContext().getString(R.string.image_size_too_big));
                     return;
                 }
                 int resultCode = listener.onSelected(tvCheck, position, media);

@@ -75,4 +75,6 @@
     <string name="ps_select_audio_max_second">%1$d초 이상의 음성파일을 선택해주세요.</string>
     <string name="ps_select_audio_min_second">%1$d초 미만의 음성파일을 선택해주세요.</string>
     <string name="ps_select_no_support">지원되지 않는 선택 유형입니다.</string>
+    <string name="image_size_too_big">Image size is too big, please try again</string>
+
 </resources>

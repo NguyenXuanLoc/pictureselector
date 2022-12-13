@@ -75,4 +75,6 @@
     <string name="ps_select_audio_max_second">選擇音訊大於%1$d秒</string>
     <string name="ps_select_audio_min_second">選擇音訊小於%1$d秒</string>
     <string name="ps_select_no_support">不支持的選擇類型</string>
+    <string name="image_size_too_big">Image size is too big, please try again</string>
+
 </resources>

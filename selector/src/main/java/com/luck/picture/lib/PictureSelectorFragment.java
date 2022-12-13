@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -27,6 +28,7 @@ import com.luck.picture.lib.animators.SlideInBottomAnimationAdapter;
 import com.luck.picture.lib.basic.FragmentInjectManager;
 import com.luck.picture.lib.basic.IPictureSelectorEvent;
 import com.luck.picture.lib.basic.PictureCommonFragment;
+import com.luck.picture.lib.config.Constant;
 import com.luck.picture.lib.config.InjectResourceSource;
 import com.luck.picture.lib.config.PermissionEvent;
 import com.luck.picture.lib.config.PictureConfig;
@@ -315,6 +317,7 @@ public class PictureSelectorFragment extends PictureCommonFragment
             completeSelectView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Log.e(TAG, "onClickasasd:" );
                     if (config.isEmptyResultReturn && SelectedManager.getSelectCount() == 0) {
                         onExitPictureSelector();
                     } else {
@@ -852,6 +855,10 @@ public class PictureSelectorFragment extends PictureCommonFragment
 
             @Override
             public void onItemClick(View selectedView, int position, LocalMedia media) {
+                if (media.getSize() > Constant.FOUR_MB) {
+                    ToastUtils.showToast(getContext(), getContext().getString(R.string.image_size_too_big));
+                    return;
+                }
                 if (config.selectionMode == SelectModeConfig.SINGLE && config.isDirectReturnSingle) {
                     SelectedManager.clearSelectResult();
                     int selectResultCode = confirmSelect(media, false);
