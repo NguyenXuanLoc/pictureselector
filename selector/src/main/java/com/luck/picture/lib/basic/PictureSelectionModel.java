@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -1014,7 +1015,8 @@ public final class PictureSelectionModel {
         if (fileKbSize >= FileSizeUnit.MB) {
             selectionConfig.filterMaxFileSize = fileKbSize;
         } else {
-            selectionConfig.filterMaxFileSize = fileKbSize * FileSizeUnit.KB;
+            Log.e("TAG", "setFilterMaxFileSize: " );
+            selectionConfig.filterMaxFileSize =fileKbSize * FileSizeUnit.KB;
         }
         return this;
     }

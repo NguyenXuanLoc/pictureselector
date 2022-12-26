@@ -492,6 +492,7 @@ public class MainActivity extends AppCompatActivity implements IBridgePictureBeh
                                 .setInjectLayoutResourceListener(getInjectLayoutResource())
                                 .setSelectionMode(cb_choose_mode.isChecked() ? SelectModeConfig.MULTIPLE : SelectModeConfig.SINGLE)
                                 .setLanguage(language)
+                                .setFilterMaxFileSize(60000)
                                 .setQuerySortOrder(cb_query_sort_order.isChecked() ? MediaStore.MediaColumns.DATE_MODIFIED + " ASC" : "")
                                 .setOutputCameraDir(chooseMode == SelectMimeType.ofAudio()
                                         ? getSandboxAudioOutputPath() : getSandboxCameraOutputPath())

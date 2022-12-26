@@ -855,6 +855,7 @@ public class PictureSelectorFragment extends PictureCommonFragment
 
             @Override
             public void onItemClick(View selectedView, int position, LocalMedia media) {
+                Log.e(TAG, "onItemClick: "+String.valueOf(media.getSize()));
                 if (media.getSize() > Constant.FOUR_MB) {
                     ToastUtils.showToast(getContext(), getContext().getString(R.string.image_size_too_big));
                     return;
